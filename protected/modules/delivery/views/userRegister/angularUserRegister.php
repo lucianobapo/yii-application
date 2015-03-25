@@ -15,7 +15,7 @@
                         $scope.inputValid();
                     } else {
                         $scope.inputInvalid();
-                    };
+                    }; 
                 };
             } else {
                 $scope.inputNone();
