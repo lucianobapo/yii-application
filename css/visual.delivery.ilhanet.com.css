@@ -1,0 +1,119 @@
+/* CSS Document */
+/** Visual do body **/
+.vb21{
+    background-color:#ffffff;
+    background-image:url(/images/backgrounds/background1.png);
+    background-repeat:repeat;
+    color: #717171;
+}
+/** Visual do header **/
+.vb26{
+    border-top:solid 4px #0088CC;
+    background-color:#FFFFFF;
+}
+/* ancora */
+.va1 a:after{
+    font-size:12px;
+}
+
+/** Visual do footer **/
+.vb22{
+    background-color:#333333;
+    font-size:10px;
+}
+.vb23{
+    background-color:#383838;
+    font-size:12px;
+}
+.vb24{
+    text-decoration:none;
+
+    color: #717171;
+}
+/* lista */
+.vul1{
+    list-style: none;
+}
+
+
+
+/** Visual da pagina **/
+.vb20{
+}
+/* titulos */
+.vt1{
+}
+
+/** Visual da lista de produtos **/
+
+.vb9a {
+    color:#00F;
+    font-weight: bold;
+    font-size: 16px;
+}
+.vb9b{
+    text-decoration: line-through;
+    font-weight: normal;
+    color:#F00;
+    font-style: normal;
+    font-size:14px;
+
+}
+.vb10a {
+    color: #b94a48;
+    font-size:12px;
+}
+.vb10b {
+    color: #5CB85C;
+    font-size:12px;
+}
+.vb11{
+    font-style: italic;
+    font-size:12px;
+}
+.vb13{
+    font-size: 17px;
+    font-weight: 100;
+}
+.vb31{
+    background-image: linear-gradient(to bottom, #35abeb 0px, #2e8dc4 100%);
+}
+.vb32{
+    font-size:10px;
+    color: #000;
+}
+.vb33{
+    font-size:10px;
+}
+
+/* titulos */
+.vt4 {
+    font-size:14px;
+    color: #000;
+    font-weight: normal;
+}
+/* label */
+.vl1{
+    font-size: 12px;
+}
+
+
+/** Definição tipo bloco **/
+.vb2{
+    background: linear-gradient(#337AB7,white);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.vb3{
+    background-image: url(/images/promocao.png);
+    background-color:transparent;
+    background-repeat:no-repeat no-repeat;
+}
+/** Definição tipo span **/
+.vb5{
+    border-color:#0088CC;
+    border-right: 5px solid #e6e6e6;
+}
+.vb7{
+    background: #e6e6e6;
+}

@@ -1,0 +1,221 @@
+/* CSS Document */
+/** Estrutura do body **/
+/* titulos */
+.st1{
+
+}
+/** Estrutura do header **/
+.sb28{
+	float: right;
+}
+/* ancora */
+.sa1 a:after{
+	content: attr(data-description);
+	display: block;
+}
+/** Estrutura do footer **/
+.sb24{
+	padding:20px;
+	margin: 0px auto;
+	max-width:960px;
+
+}
+@media (max-width: 767px) {
+	.sb24{
+		line-height: 30px;
+	}
+}
+
+.sb25{
+	display: inline-block;
+	float: none;
+}
+
+/* lista */
+.sul1 {
+	line-height:30px;
+	padding: 0px 0px 0px 10px;
+	margin: 0px;
+}
+
+/** Estrutura da pagina **/
+.sb16{
+	margin: 10px 0px;
+	display: block;
+}
+.sb17{
+	width: 280px;
+}
+.sb18{
+	text-align: right;
+}
+.sb19{
+	width: 220px;
+	padding: 4px;
+	line-height: 18px;
+	margin: 0px 5px;
+}
+.sb20{/*container*/
+}
+.sb2-{/*main body*/
+	padding-top:15px;
+	padding-bottom:15px;
+	background-color:#FFFFFF!important;
+}
+.sb26{
+	margin: 10px 5px;
+	width: 180px;
+	padding-left: 44px!important;
+}
+.sb27{
+	margin: 0px;
+}
+.sb29{
+	float: none;
+	display: inline-block;
+}
+.sb30{
+	width: 100%;
+}
+.sb34{
+	font-size: 12px!important;
+	line-height: 1.5!important;
+}
+
+
+/** Estrutura da lista de produtos **/
+
+.sb6 {
+	margin: 0px;
+	padding: 0px;
+	-webkit-padding-start: 0px;
+	list-style-type: none;
+}
+.sb8{
+	display: block;
+}
+.sb9{
+	margin: 0px;
+	text-align: left;
+	display: inline-block;
+}
+.sb10 {
+	margin: 0px;
+	display: block;
+}
+.sb11{
+	padding: 0px;
+	border-left: 0px;
+	margin: 0px;
+}
+.sb12 {
+	display: inline-block;
+	float: right;
+}
+.sb13{
+	position: relative;
+	line-height: 34px;
+}
+.sb14{
+	margin: 0px;
+}
+.sb15{
+	padding: 5px;
+}
+.sb31{
+	position: relative;
+	display: inline-block;
+	height: 12px;
+	margin: 2px 0px 0px;
+	width: 60px;
+}
+.sb32{
+	position: absolute;
+	color: rgb(0, 0, 0);
+	line-height: 12px;
+	text-align: center;
+	width: 100%;
+}
+.sb33{
+	display: block;
+	line-height: 10px;
+}
+
+
+/* titulos */
+.st4 {
+	text-align: left;
+	margin: 0px;
+	display: inline;
+}
+/* input */
+.sip1 {
+	width: 50px;
+	line-height: 1px;
+}
+/* imagem */
+.sim2 {
+	padding: 20px 0px;
+	max-width: 80px;
+	max-height: 115px;
+}
+/* label */
+.sl1{
+	margin: 0px 3px 0px;
+}
+
+
+/** Definição tipo bloco **/
+.sb1{
+	width: 200px;
+	margin: 5px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	padding: 5px;
+}
+.sb2{
+	position: relative;
+	text-align: center;
+	height: 115px;
+}
+.sb3{
+	margin: 3px;
+	background-position:right 3px;
+	background-attachment:scroll;
+}
+
+/** Definição tipo span **/
+
+.sb4{
+	margin: 0px;
+	vertical-align: top;
+	text-align: left;
+	padding: 5px 5px 5px 0px;
+}
+.sb4 div {
+
+}
+.sb5{
+	margin-bottom: 0px;/*margin-bottom:25px;*/
+	width: 100%; /*width: 80px;*/
+	min-height: 50px;
+	margin-right: 10px;
+	text-align:left;
+	padding:0px;
+	display: inline-block;
+}
+
+.sb7{
+	height: 135px;
+	padding: 0px; /*padding:20px 0;*/
+	width: 80px;
+	min-height: 50px;
+	margin-right: 10px;
+	text-align:center;
+	float: left;
+}
+/* imagem */
+.sim1{
+	float: right;
+}
