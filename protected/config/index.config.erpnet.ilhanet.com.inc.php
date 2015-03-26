@@ -5,6 +5,6 @@ define('YII_DEBUG',false);
 define('YII_TRACE_LEVEL',3);
 
 //$yii='/var/yii/framework1115022a51/yii.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
+$config=dirname(__FILE__).'/main.php';
 //require_once ('/var/www/yii1116bca042/framework/yii.php');
 require_once ('/var/www/yii1115022a51/framework/yii.php');
