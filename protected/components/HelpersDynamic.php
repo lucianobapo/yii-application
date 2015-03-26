@@ -146,7 +146,7 @@ class HelpersDynamic {
                 ),
                 'visible' => Yii::app ()->user->checkAccess ( 'erpnetManageQuest' )
             ) );
-
+/*
             array_push ( $menus,
 
 				array (
@@ -184,7 +184,8 @@ class HelpersDynamic {
 					)
 				,
 					'visible' => Yii::app ()->user->checkAccess ( 'erpnetViewCadastros' )
-				), array (
+				),
+                array (
 					'label' => Helpers::t ( 'erpnet', 'menuTopLancamentos' ) . ' <span class="caret"></span>',
 					'url' => '#',
 					'itemOptions' => array (
@@ -249,7 +250,9 @@ class HelpersDynamic {
 					)
 				,
 					'visible' => Yii::app ()->user->checkAccess ( 'erpnetViewLancamentos' )
-				), array (
+				),
+
+                array (
 					'label' => Helpers::t ( 'erpnet', 'menuTopRelatorios') . ' <span class="caret"></span>',
 					'url' => '#',
 					'itemOptions' => array (
@@ -273,7 +276,7 @@ class HelpersDynamic {
 						)
 					),
 					'visible' => Yii::app ()->user->checkAccess ( 'erpnetViewRelatorios' )
-				) );
+				) );//*/
 		}
 
 

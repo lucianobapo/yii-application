@@ -23,7 +23,6 @@ class ApplicationConfigBehavior extends CBehavior
 	 */
 	public function beginRequest()
 	{
-		//define('YII_DEBUG',true);
 		if (isset($_POST['_lang']))
 			$this->owner->user->setState('applicationLanguage', $_POST['_lang']);
 		if ($this->owner->user->getState('applicationLanguage'))
@@ -36,6 +35,10 @@ class ApplicationConfigBehavior extends CBehavior
 		//SiteController::redirect(array('/site/trocarSenha'));
 		//Yii::app()->request->redirect(array('/site/trocarSenha'));
 		//$this->owner->request->redirect(array('/site/trocarSenha'));
+
+
+        if (file_exists ($_SERVER['DOCUMENT_ROOT'].'/protected/config/dyn.config.'.$_SERVER['HTTP_HOST'].'.inc.php'))
+            require_once($_SERVER['DOCUMENT_ROOT'].'/protected/config/dyn.config.'.$_SERVER['HTTP_HOST'].'.inc.php');
 	}
 }
 ?>

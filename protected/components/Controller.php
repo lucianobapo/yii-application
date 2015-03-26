@@ -58,9 +58,9 @@ class Controller extends CController
 	 * @param CAction $action
 	 * @return bool
      */
-	public function beforeAction($action)
+    protected function beforeAction($action)
 	{
-		if(parent::beforeAction($action))
+        if(parent::beforeAction($action))
 		{
 			// this method is called before any module controller action is performed
 			// you may place customized code here

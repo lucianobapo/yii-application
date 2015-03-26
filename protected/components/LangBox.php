@@ -9,8 +9,9 @@ class LangBox extends CWidget
 				'en_us' => 'English',
 				'pt_br' => utf8_encode('Portugu�s'));
 		if (isset(Yii::app()->user->empresa)) {
-			if (Yii::app()->user->empresa=='valao') $linguagens['pt']=utf8_encode('Portugu�s (Val�o)');
-			$this->mostra=(ErpnetConfig::model()->findByPk(Yii::app()->user->empresa)->mostra_lang);
+			if (Yii::app()->user->empresa=='valao') $linguagens['pt']=Helpers::t('appUi','Português (Valão)');
+            $config = ErpnetConfig::model()->findByPk(Yii::app()->user->empresa);
+			$this->mostra=(is_object($config)?$config->mostra_lang:false);
 		}
 		
 		if ($this->mostra) 
