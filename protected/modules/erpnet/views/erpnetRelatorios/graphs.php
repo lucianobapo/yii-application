@@ -14,13 +14,22 @@ $this->renderPartial('angularRelatorioGraficos', array());
 </div>
 
 <div ng-app='app'>
-        <?php
-        $this->beginWidget('zii.widgets.CPortlet', array(
-            'title'=>"<i class='icon-check'></i> Despesas e Receitas - Delivery 24hs",
-        ));
+    <?php
+    $this->beginWidget('zii.widgets.CPortlet', array(
+        'title'=>"<i class='icon-check'></i> Despesas e Receitas - Delivery 24hs",
+    ));
 
-        ?>
-        <div class="graficoLinha" style="height: 250px;width:100%;margin-top:15px; margin-bottom:15px;"></div>
-        <?php $this->endWidget();?>
+    ?>
+    <div class="graficoLinha" style="height: 250px;width:100%;margin-top:15px; margin-bottom:15px;"></div>
+    <?php $this->endWidget();?>
+
+    <?php
+    $this->beginWidget('zii.widgets.CPortlet', array(
+        'title'=>"<i class='icon-check'></i> Despesas e Receitas - Delivery 24hs",
+    ));
+
+    ?>
+    <div class="graficoLinhaHachurada" style="height: 250px;width:100%;margin-top:15px; margin-bottom:15px;"></div>
+    <?php $this->endWidget();?>
 
 </div>
