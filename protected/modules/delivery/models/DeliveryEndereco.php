@@ -146,9 +146,12 @@ class DeliveryEndereco extends CActiveRecord
     }
 
     public static function isPrincipal($id){
+        return self::model()->findByPk($id)->principal;
+        /*
         $modelCache=new DbAccess();
         //$modelCache->getEndereco($id);
         return ($modelCache->getEndereco($id)->principal);
+        */
     }
 
 }

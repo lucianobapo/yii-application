@@ -131,10 +131,10 @@ class DeliveryEnderecoController extends Controller
 
     public function actionPrincipal($id)
     {
-        echo ('<pre>'.CVarDumper::dumpAsString($id).'</pre>');
+        //echo ('<pre>'.CVarDumper::dumpAsString($id).'</pre>');
         $model=$this->loadModel($id);
-        echo ('<pre>'.CVarDumper::dumpAsString($model).'</pre>');
-        if ($model->principal==1) return false;
+        //echo ('<pre>'.CVarDumper::dumpAsString($model).'</pre>');
+        //if ($model->principal==1) return false;
 
         if ( ($model->principal==1)||($model->status_cancelado==1)||($model->usuario!=Yii::app()->user->social_identifier) ){
             Yii::app()->user->setFlash('erro',Helpers::t('appUi', 'Erro: Endereço Inválido.'));
@@ -148,8 +148,8 @@ class DeliveryEnderecoController extends Controller
             'principal'=>1,
         ));
         $principal->principal=0;
-        echo ('<pre>'.CVarDumper::dumpAsString($principal).'</pre>');
-        /*
+        //echo ('<pre>'.CVarDumper::dumpAsString($principal).'</pre>');
+        //*
         if ($principal->save()) {
             $model->principal=1;
             $model->save();
@@ -157,7 +157,7 @@ class DeliveryEnderecoController extends Controller
         }//*/
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        //if(!isset($_GET['ajax'])) $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('create'));
+        if(!isset($_GET['ajax'])) $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('create'));
     }
 
 	/**
