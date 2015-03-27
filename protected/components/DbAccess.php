@@ -187,7 +187,7 @@ class DbAccess extends CDbConnection {
     public function getEndereco($id=null){
         if ($id===null)  return null;
         //Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($produto).'</pre>'),'teste');
-        $key=get_class($this).'.getEndereco.'.$id;
+        $key=get_class($this).'.getEndereco2.'.$id;
         if (($dataReader=$this->getDataCache($key))===false) {
             $dataReader=Yii::app()->db->createCommand();
             $dataReader->reset();
