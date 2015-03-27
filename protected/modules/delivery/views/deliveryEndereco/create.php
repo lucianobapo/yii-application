@@ -5,6 +5,40 @@
 $this->breadcrumbs=array();
 
 $this->menu=array();
+
+$clientes=DeliveryParceiro::model()->findAllByAttributes(array(
+    'empresa'=>'ilhanet',
+    'tipo_cliente'=>1,
+));
+
+foreach($clientes as $cliente){
+    $enderecos=DeliveryEndereco::model()->findAllByAttributes(array(
+        'id_entidade'=>$cliente->id,
+    ));
+    if (count($enderecos)==0) {
+        //echo ('<pre>'.CVarDumper::dumpAsString($cliente).'</pre>');
+        $novoEndereco= new DeliveryEndereco();
+        //$novoEndereco->empresa=$cliente;
+        if (is_object($user=User::model()->findByAttributes(array('id_cliente'=>$cliente->id)))){
+            $novoEndereco->usuario=$user->social_identifier;
+            $novoEndereco->id_entidade=$cliente->id;
+        $novoEndereco->cep=$cliente->cep;
+        $novoEndereco->logradouro=$cliente->endereco;
+        $novoEndereco->bairro=$cliente->custom3;
+        $novoEndereco->cidade=$cliente->cidade;
+        $novoEndereco->estado=$cliente->estado;
+        $novoEndereco->complemento=$cliente->custom4;
+        $novoEndereco->principal=1;
+
+        $novoEndereco->save();
+        //echo ('<pre>'.CVarDumper::dumpAsString($novoEndereco).'</pre>');
+        }
+
+    }
+}
+
+
+
 ?>
 
     <h1><?php echo Helpers::t('appUi','{empresa} - Endereços',array('{empresa}'=>Yii::app()->name));?></h1>

@@ -1,6 +1,6 @@
 <?php
 //define('YII_DEBUG',true);
-define('YII_DEBUG',true);
+define('YII_DEBUG',false);
 // specify how many levels of call stack should be shown in each log message
 define('YII_TRACE_LEVEL',3);
 

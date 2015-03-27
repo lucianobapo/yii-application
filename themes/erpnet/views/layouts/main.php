@@ -15,11 +15,16 @@
 	<?php
 	$baseUrl = Yii::app()->theme->baseUrl;
 	$cs = Yii::app()->getClientScript();
-    //$cs->registerScriptFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js',CClientScript::POS_BEGIN);
+    $cs->registerScriptFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js',CClientScript::POS_HEAD);
+
     //$cs->registerScriptFile("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js",CClientScript::POS_BEGIN);
     $cs->registerScriptFile("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js",CClientScript::POS_BEGIN);
 
-    Yii::app()->clientScript->registerCoreScript('jquery');
+    $cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js",CClientScript::POS_HEAD);
+    //$cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.pie.min.js",CClientScript::POS_END);
+    //$cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.categories.min.js",CClientScript::POS_END);
+
+    //Yii::app()->clientScript->registerCoreScript('jquery');
 
 	?>
     <!-- Fav and Touch and touch icons -->
@@ -45,11 +50,11 @@
 	  <?php
 	  $cs->registerScriptFile($baseUrl.'/js/bootstrap.min.js');
 	  $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.sparkline.js');
-	  $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.min.js');
-	  $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.pie.min.js');
+	  //$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.min.js');
+	  //$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.pie.min.js');
 	  $cs->registerScriptFile($baseUrl.'/js/charts.js');
-	  $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.knob.js');
-	  $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.masonry.min.js');
+	  //$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.knob.js');
+	  //$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.masonry.min.js');
 	  $cs->registerScriptFile($baseUrl.'/js/styleswitcher.js');
 	  //$cs->registerScriptFile($baseUrl.'/js/jquery.price_format.2.0.js');
 	  //$cs->registerScriptFile($baseUrl.'/js/aplicacao.js');

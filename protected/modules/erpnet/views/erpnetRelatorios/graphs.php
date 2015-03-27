@@ -29,7 +29,7 @@ $this->renderPartial('angularRelatorioGraficos', array());
     ));
 
     ?>
-    <div class="graficoLinhaHachurada" style="height: 250px;width:100%;margin-top:15px; margin-bottom:15px;"></div>
+    <div class="graficoBarras" style="height: 250px;width:100%;margin-top:15px; margin-bottom:15px;"></div>
     <?php $this->endWidget();?>
 
 </div>

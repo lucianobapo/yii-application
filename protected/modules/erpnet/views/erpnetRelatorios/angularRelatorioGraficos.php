@@ -98,6 +98,8 @@
             // atribuímos em forma de classe css nesse caso
             restrict: 'C',
             link: function (scope, element, attrs) {
+
+                /*
                 var sin = [], cos = [];
                 for (var i = 0; i < 14; i += 0.5) {
                     sin.push([i, Math.sin(i)]);
@@ -147,6 +149,8 @@
 
                 sin = d1;
                 cos = d2;
+
+
                 //graph options
                 var options = {
                     xaxis: {
@@ -210,18 +214,195 @@
                 };
                 var plot = $.plot(element,
                     [{
-                        label: "<?php echo Helpers::t('appUi','Receitas'); ?>",
+                        label: "",
                         data: sin,
                         lines: {fillColor: "#f2f7f9"},
                         points: {fillColor: "#88bbc8"}
                     },
                         {
-                            label: "<?php echo Helpers::t('appUi','Despesas'); ?>",
+                            label: "",
                             data: cos,
                             lines: {fillColor: "#fff8f2"},
                             points: {fillColor: "#ed7a53"}
-                        }], options);
+                        }], options);*/
+                var d1 = [
+                    <?php
+                        $criteria=new CDbCriteria;
+		                $criteria->compare('empresa','ilhanet');
+		                $criteria->compare('tipo','venda');
+		                $criteria->compare('status_fechado',1);
+		                $criteria->compare('status_cancelado',0);
+		                $criteria->order='data_termino';
+                        $ordens=ErpnetOrdem::model()->findAll($criteria);
+                        $saida='';
+                        $soma=0;
+                        //echo '<pre>'.CVarDumper::dumpAsString($ordens).'</pre>';
+                        foreach ($ordens as $ordem) {
+                            $soma=$soma+(is_object($ordem)?$ordem->valor:'0');
+                            //echo "[(".(strtotime("+".($i-1)." days",$ordem->data_termino))." * 1000), $soma],";
+                            //$saida=$saida."[(".$ordem->data_termino." * 1000), $soma],";
+                            $saida=$saida."[".($ordem->data_termino*1000).", $soma],";
+                        }
+                        echo substr($saida, 0, -1);
+                    ?>
+
+                ];
+                var d2 = [
+                    <?php
+                        $criteria=new CDbCriteria;
+		                $criteria->compare('empresa','ilhanet');
+		                $criteria->compare('tipo','compra');
+		                $criteria->compare('status_fechado',1);
+		                $criteria->compare('status_cancelado',0);
+		                $criteria->order='data_termino';
+                        $ordens=ErpnetOrdem::model()->findAll($criteria);
+                        $saida='';
+                        $soma=0;
+                        //echo '<pre>'.CVarDumper::dumpAsString($ordens).'</pre>';
+                        foreach ($ordens as $ordem) {
+                            $soma=$soma+(is_object($ordem)?$ordem->valor:'0');
+                            $saida=$saida."[".($ordem->data_termino*1000).", $soma],";
+                        }
+                        echo substr($saida, 0, -1);
+                    ?>
+                ];
+
+                /*
+                var d1 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.25) {
+                    d1.push([i, Math.sin(i)]);
+                }
+
+                var d2 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.25) {
+                    d2.push([i, Math.cos(i)]);
+                }
+
+                var d3 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.1) {
+                    d3.push([i, Math.tan(i)]);
+                }*/
+
+                $.plot(element, [
+                    { label: "<?php echo Helpers::t('appUi','Receitas'); ?>", data: d1 },
+                    { label: "<?php echo Helpers::t('appUi','Despesas'); ?>", data: d2 }
+                    //{ label: "tan(x)", data: d3 }
+                ], {
+                    series: {
+                        lines: { show: true },
+                        points: { show: true }
+                    },
+                    /*
+                    xaxis: {
+                        min: (new Date(2011, 11, 15)).getTime(),
+                        max: (new Date(2012, 04, 18)).getTime(),
+                        mode: "time",
+                        timeformat: "%b",
+                        tickSize: [1, "month"],
+                        monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        tickLength: 0, // hide gridlines
+                        axisLabel: 'Month',
+                        axisLabelUseCanvas: true,
+                        axisLabelFontSizePixels: 12,
+                        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+                        axisLabelPadding: 5
+                    },
+
+                    xaxis: {
+                        ticks: [
+                            0, [ Math.PI/2, "\u03c0/2" ], [ Math.PI, "\u03c0" ],
+                            [ Math.PI * 3/2, "3\u03c0/2" ], [ Math.PI * 2, "2\u03c0" ]
+                        ]
+                    },
+                    yaxis: {
+                        ticks: 10,
+                        min: -2,
+                        max: 2,
+                        tickDecimals: 3
+                    },*/
+                    legend: {
+                        position: "ne",
+                        margin: [0,-25],
+                        noColumns: 0,
+                        labelBoxBorderColor: null,
+                        labelFormatter: function(label, series) {
+                            // just add some space to labes
+                            return label+'&nbsp;&nbsp;';
+                        }
+                    },
+                    grid: {
+                        backgroundColor: { colors: [ "#fff", "#eee" ] },
+                        borderWidth: {
+                            top: 1,
+                            right: 1,
+                            bottom: 2,
+                            left: 2
+                        }
+                    }
+                });
             }
         }
     });
+
+    app.directive('graficoBarras', function () {
+        return {
+            // atribuímos em forma de classe css nesse caso
+            restrict: 'C',
+            link: function (scope, element, attrs) {
+                var d1 = [];
+                for (var i = 0; i < 14; i += 0.5) {
+                    d1.push([i, Math.sin(i)]);
+                }
+
+                var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+
+                var d3 = [];
+                for (var i = 0; i < 14; i += 0.5) {
+                    d3.push([i, Math.cos(i)]);
+                }
+
+                var d4 = [];
+                for (var i = 0; i < 14; i += 0.1) {
+                    d4.push([i, Math.sqrt(i * 10)]);
+                }
+
+                var d5 = [];
+                for (var i = 0; i < 14; i += 0.5) {
+                    d5.push([i, Math.sqrt(i)]);
+                }
+
+                var d6 = [];
+                for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+                    d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+                }
+
+                $.plot(element, [{
+                    data: d1,
+                    //lines: { show: true, fill: true }
+                    bars: { show: true }
+                }, {
+                    data: d2,
+                    bars: { show: true }
+                }/*, {
+                    data: d3,
+                    //points: { show: true }
+                    bars: { show: true }
+                }, {
+                    data: d4,
+                    //lines: { show: true }
+                    bars: { show: true }
+                }, {
+                    data: d5,
+                    //lines: { show: true },
+                    //points: { show: true }
+                    bars: { show: true }
+                }, {
+                    data: d6,
+                    //lines: { show: true, steps: true }
+                    bars: { show: true }
+                }*/]);
+            }
+        }
+    });
+
 </script>
