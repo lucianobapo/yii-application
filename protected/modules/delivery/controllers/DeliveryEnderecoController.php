@@ -131,7 +131,9 @@ class DeliveryEnderecoController extends Controller
 
     public function actionPrincipal($id)
     {
+        echo ('<pre>'.CVarDumper::dumpAsString($id).'</pre>');
         $model=$this->loadModel($id);
+        echo ('<pre>'.CVarDumper::dumpAsString($model).'</pre>');
         if ($model->principal==1) return false;
 
         if ( ($model->principal==1)||($model->status_cancelado==1)||($model->usuario!=Yii::app()->user->social_identifier) ){
@@ -141,7 +143,7 @@ class DeliveryEnderecoController extends Controller
         }
 
         $principal=DeliveryEndereco::model()->findByAttributes(array(
-            'empresa'=>(isset(Yii::app()->user->empresa)?Yii::app()->user->empresa:'ilhanet'),
+            'empresa'=>'ilhanet',
             'usuario'=>Yii::app()->user->social_identifier,
             'principal'=>1,
         ));
