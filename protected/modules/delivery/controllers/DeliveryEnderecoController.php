@@ -146,20 +146,16 @@ class DeliveryEnderecoController extends Controller
             'principal'=>1,
         ));
         $principal->principal=0;
+        echo ('<pre>'.CVarDumper::dumpAsString($principal).'</pre>');
+        /*
         if ($principal->save()) {
             $model->principal=1;
             $model->save();
-            /*
-            if($model->save()) {
-                //EQuickDlgs::checkDialogJsScript();
-                Yii::app()->user->setFlash('success',Helpers::t('appUi', 'Endereço atualizado com sucesso!'));
-                $this->redirect(array('create'));
-            }*/
-        }
+
+        }//*/
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if(!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('create'));
+        //if(!isset($_GET['ajax'])) $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('create'));
     }
 
 	/**
