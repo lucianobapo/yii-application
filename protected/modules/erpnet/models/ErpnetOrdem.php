@@ -56,6 +56,12 @@ class ErpnetOrdem extends CActiveRecord
 			//array('valor', 'match', 'pattern'=>'/^\d*[,]\d{2}$/','message' => 'Dever� no formato 99,99'),
 					
 			array('empresa', 'length', 'max'=>255),
+
+            //array('data_criacao', 'required','on'=>'insert,venda'),
+            array('data_criacao,data_update','default',
+                'value'=>new CDbExpression('NOW()'),
+                'setOnEmpty'=>false,'on'=>'insert,venda'),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, empresa, data_criacao, data_termino, id_produto, id_wbs, turno, quantidade', 'safe', 'on'=>'search'),

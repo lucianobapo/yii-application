@@ -47,16 +47,28 @@ class DeliveryPedido extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('empresa, data_criacao, tipo, pagamento', 'required'),
+			array('empresa,data_criacao, tipo, pagamento', 'required'),
 			array('id_produto, id_wbs, id_wbs_destino, id_cliente, status_fechado', 'numerical', 'integerOnly'=>true),
 			array('quantidade, valor', 'numerical'),
 			array('empresa, data_termino', 'length', 'max'=>20),
 			array('usuario, referencia, obs', 'length', 'max'=>255),
 			array('moeda', 'length', 'max'=>3),
 			array('data_inicio, turno, pagamento, texto_header', 'safe'),
+
+            array('data_update', 'required','on'=>'update'),
+            array('data_criacao', 'required','on'=>'insert,venda'),
+
+            array('data_update','default',
+                'value'=>new CDbExpression('NOW()'),
+                'setOnEmpty'=>false,'on'=>'update'),
+
+            array('data_criacao,data_update','default',
+                'value'=>new CDbExpression('NOW()'),
+                'setOnEmpty'=>false,'on'=>'insert,venda'),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, empresa, data_criacao, usuario, data_inicio, data_termino, id_produto, id_wbs, id_wbs_destino, id_cliente, turno, quantidade, valor, moeda, tipo, pagamento, texto_header, referencia, obs, status_fechado', 'safe', 'on'=>'search'),
+			array('id, empresa, usuario, data_inicio, data_termino, id_produto, id_wbs, id_wbs_destino, id_cliente, turno, quantidade, valor, moeda, tipo, pagamento, texto_header, referencia, obs, status_fechado', 'safe', 'on'=>'search'),
 		);
 	}
 

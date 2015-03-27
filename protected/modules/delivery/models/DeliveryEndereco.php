@@ -40,6 +40,18 @@ class DeliveryEndereco extends CActiveRecord
 			array('id_entidade, cep', 'numerical', 'integerOnly'=>true),
 			array('logradouro, complemento, obs', 'length', 'max'=>255),
 			array('bairro, cidade, estado, pais', 'length', 'max'=>50),
+
+            array('data_update', 'required','on'=>'update'),
+            //array('data_criacao,data_update', 'required','on'=>'insert'),
+
+            array('data_update','default',
+                'value'=>new CDbExpression('NOW()'),
+                'setOnEmpty'=>false,'on'=>'update'),
+
+            array('data_criacao,data_update','default',
+                'value'=>new CDbExpression('NOW()'),
+                'setOnEmpty'=>false,'on'=>'insert'),
+
 			array('data_update, data_criacao, principal', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -146,12 +158,12 @@ class DeliveryEndereco extends CActiveRecord
     }
 
     public static function isPrincipal($id){
-        return self::model()->findByPk($id)->principal;
-        /*
+        //return self::model()->findByPk($id)->principal;
+        //*
         $modelCache=new DbAccess();
         //$modelCache->getEndereco($id);
         return ($modelCache->getEndereco($id)->principal);
-        */
+        //*/
     }
 
 }
