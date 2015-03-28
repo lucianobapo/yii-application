@@ -7,7 +7,7 @@ class SiteController extends Controller
 		return array(
 			//'Http +index',
 			array(
-				'application.components.FilterHttp +index',
+				'application.components.FilterHttp +index,logout',
 			),
 			array('application.components.FilterHttps +autenticate, endpoint',),
 		);
@@ -260,8 +260,8 @@ class SiteController extends Controller
 	}
 	
 	public function actionLogout(){
-	
-		if(Yii::app()->hybridAuth->getConnectedProviders()){
+
+		if ( (isset(Yii::app()->hybridAuth))&&(Yii::app()->hybridAuth->getConnectedProviders()) ){
 			Yii::app()->hybridAuth->logoutAllProviders();
 		}
 	
