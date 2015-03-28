@@ -19,17 +19,17 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="controls-row">
-		<div class="span3">
-			<?php echo $form->labelEx($model,'cod_barra', array('class'=>'span3')); ?>
-			<?php echo $form->textField($model,'cod_barra',array('class'=>'span3','size'=>60,'maxlength'=>255)); ?>
+	<div class="form-block-delivery">
+		<div class="form-inline-delivery col-sm-3">
+			<?php echo $form->labelEx($model,'cod_barra', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'cod_barra',array('class'=>'form-control','size'=>60,'maxlength'=>255)); ?>
 		</div>
-		<div class="span3">
-			<?php echo $form->labelEx($model,'cod_fiscal', array('class'=>'span3')); ?>
-			<?php echo $form->textField($model,'cod_fiscal',array('class'=>'span3','size'=>60,'maxlength'=>255)); ?>
+		<div class="form-inline-delivery col-sm-3">
+			<?php echo $form->labelEx($model,'cod_fiscal', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'cod_fiscal',array('class'=>'form-control','size'=>60,'maxlength'=>255)); ?>
 		</div>
-		<div class="span4">
-			<?php echo $form->labelEx($model,'descricao', array('class'=>'span4')); ?>
+		<div class="form-inline-delivery col-sm-4">
+			<?php echo $form->labelEx($model,'descricao', array('class'=>'')); ?>
 			<?php
 			//echo $form->textField($model,'descricao',array('size'=>60,'maxlength'=>255));
 			$this->widget('zii.widgets.jui.CJuiAutoComplete',array(
@@ -41,68 +41,72 @@
 					'minLength'=>'2',
 				),
 				'htmlOptions'=>array(
-					'class'=>'span4',
+					'class'=>'form-control',
 				),
 			));
 			?>
 		</div>
 	</div>
 
-	<div class="controls-row">
+	<div class="form-block-delivery">
 
-		<div class="span2">
-			<?php echo $form->labelEx($model,'valor', array('class'=>'span2')); ?>
-			<?php echo $form->textField($model,'valor',array('class'=>'span2')); ?>
+		<div class="form-inline-delivery col-md-2">
+			<?php echo $form->labelEx($model,'valor', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'valor',array('class'=>'form-control')); ?>
 		</div>
-		<div class="span2">
-			<?php echo $form->labelEx($model,'valor_venda', array('class'=>'span2')); ?>
-			<?php echo $form->textField($model,'valor_venda',array('class'=>'span2')); ?>
+		<div class="form-inline-delivery col-md-2">
+			<?php echo $form->labelEx($model,'valor_venda', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'valor_venda',array('class'=>'form-control')); ?>
 		</div>
-		<div class="span2">
-			<?php echo $form->labelEx($model,'valor_promocao', array('class'=>'span2')); ?>
-			<?php echo $form->textField($model,'valor_promocao',array('class'=>'span2')); ?>
+		<div class="form-inline-delivery col-md-2">
+			<?php echo $form->labelEx($model,'valor_promocao', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'valor_promocao',array('class'=>'form-control')); ?>
 		</div>
-		<div class="span2">
-			<?php echo $form->labelEx($model,'moeda', array('class'=>'span2')); ?>
-			<?php echo $form->DropDownList($model,'moeda',Yii::app()->params['moedas'],array('class'=>'span2')); ?>
+		<div class="form-inline-delivery col-md-2">
+			<?php echo $form->labelEx($model,'moeda', array('class'=>'')); ?>
+			<?php echo $form->DropDownList($model,'moeda',Yii::app()->params['moedas'],array('class'=>'form-control')); ?>
 		</div>
-		<div class="span2">
-			<?php echo $form->labelEx($model,'estoque_minimo', array('class'=>'span2')); ?>
-			<?php echo $form->textField($model,'estoque_minimo',array('class'=>'span2')); ?>
+		<div class="form-inline-delivery col-md-2">
+			<?php echo $form->labelEx($model,'estoque_minimo', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'estoque_minimo',array('class'=>'form-control')); ?>
 		</div>
 	</div>
 
-	<div class="controls-row">
-		<div class="span3">
-			<?php echo $form->labelEx($model,'fabricante', array('class'=>'span3')); ?>
-			<?php echo $form->textField($model,'fabricante',array('class'=>'span3','size'=>60,'maxlength'=>255)); ?>
+	<div class="form-block-delivery">
+		<div class="form-inline-delivery ">
+			<?php echo $form->labelEx($model,'fabricante', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'fabricante',array('class'=>'','size'=>60,'maxlength'=>255)); ?>
 		</div>
-		<div class="span3">
-			<?php echo $form->labelEx($model,'uom', array('class'=>'span3')); ?>
-			<?php echo $form->DropDownList($model,'uom',Yii::app()->params['unidades'],array('class'=>'span3')); ?>
+		<div class="form-inline-delivery ">
+			<?php echo $form->labelEx($model,'uom', array('class'=>'')); ?>
+			<?php echo $form->DropDownList($model,'uom',Yii::app()->params['unidades'],array('class'=>'')); ?>
 		</div>
-		<div class="span4">
-			<?php echo $form->labelEx($model,'obs', array('class'=>'span4')); ?>
-			<?php echo $form->textField($model,'obs',array('class'=>'span4')); ?>
+		<div class="form-inline-delivery ">
+			<?php echo $form->labelEx($model,'obs', array('class'=>'')); ?>
+			<?php echo $form->textField($model,'obs',array('class'=>'')); ?>
 		</div>
 	</div>
-	<div class="controls-row">
-		<div class="span4">
+	<div class="form-block-delivery">
+		<div class="">
 			<?php echo $form->labelEx($model,'categoria', array('class'=>'')); ?>
 			<?php echo $form->textField($model,'categoria',array('class'=>'','size'=>60,'maxlength'=>255)); ?>
 		</div>
 	</div>
 
-	<div class="controls-row">
-		<?php echo $form->checkBox($model,'destaque' , array()); ?>
-		<?php echo $form->labelEx($model,'destaque', array('class'=>'span2')); ?>
-	</div>
-	<div class="controls-row">
-		<?php echo $form->checkBox($model,'promocao' , array()); ?>
-		<?php echo $form->labelEx($model,'promocao', array('class'=>'span2')); ?>
-	</div>
+    <div class="form-block-delivery">
+        <div class="">
+            <?php echo $form->checkBox($model,'destaque' , array()); ?>
+            <?php echo $form->labelEx($model,'destaque', array('class'=>'')); ?>
+        </div>
+        <div class="">
+            <?php echo $form->checkBox($model,'promocao' , array()); ?>
+            <?php echo $form->labelEx($model,'promocao', array('class'=>'')); ?>
+        </div>
+    </div>
 
-	<div class="row">
+
+
+	<div class="form-block-delivery">
 		<?php echo $form->labelEx($model,'erpnetGrupoProdutos'); ?>
 		<?php echo $form->dropDownList($model, 'erpnetGrupoProdutos', CHtml::listData(ErpnetGrupoProduto::model()->findAll('empresa=:empresa', array(':empresa'=>Yii::app()->user->empresa)), 'id', 'nome'), array('multiple'=>'multiple', 'size'=>4)); ?>
 		<?php echo $form->error($model,'erpnetGrupoProdutos'); ?>

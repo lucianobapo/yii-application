@@ -15,6 +15,7 @@
     		$index=0;
     		foreach ($data->getErpnetProdutos(true) as $produto):
 				$saldo=ErpnetProduto::saldoEstoque($produto->id);
+				if ($saldo==0) continue;
 				$modelPreferencia= new DbAccess();
     	?>
 		{
