@@ -6,7 +6,7 @@ Yii::app()->menu->addMenu(
         'label' => Helpers::t ( 'erpnet', 'menuTopCadastros') . ' <span class="caret"></span>',
         'url' => '#',
         'itemOptions' => array (
-            'class' => 'dropdown',
+            'class' => "'dropdown'",
             'tabindex' => "-1"
         ),
         'linkOptions' => array (
@@ -44,7 +44,7 @@ Yii::app()->menu->addMenu(
         'label' => Helpers::t ( 'erpnet', 'menuTopLancamentos' ) . ' <span class="caret"></span>',
         'url' => '#',
         'itemOptions' => array (
-            'class' => 'dropdown',
+            'class' => "'dropdown'",
             'tabindex' => "-1"
         ),
         'linkOptions' => array (
@@ -113,7 +113,7 @@ Yii::app()->menu->addMenu(
         'label' => Helpers::t ( 'erpnet', 'menuTopRelatorios') . ' <span class="caret"></span>',
         'url' => '#',
         'itemOptions' => array (
-            'class' => 'dropdown',
+            'class' => "'dropdown'",
             'tabindex' => "-1"
         ),
         'linkOptions' => array (

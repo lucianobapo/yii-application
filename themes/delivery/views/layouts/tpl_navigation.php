@@ -14,7 +14,15 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<?php Helpers::getMenu(); ?>
+				<?php
+                //die ('<pre>'.CVarDumper::dumpAsString($this->action).'</pre>');
+                //$this->getController;
+
+                Yii::app()->menu->setController($this->id);
+                if (is_object($this->action)) Yii::app()->menu->setAction($this->action->id);
+                //die ('<pre>'.CVarDumper::dumpAsString(Yii::app()->menu).'</pre>');
+                Yii::app()->menu->renderMenu();
+                //Helpers::getMenu(); ?>
 			</div>
 
 		</div>

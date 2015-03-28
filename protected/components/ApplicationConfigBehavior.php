@@ -14,7 +14,8 @@ class ApplicationConfigBehavior extends CBehavior
 	public function events()
 	{
 		return array_merge(parent::events(), array(
-				'onBeginRequest'=>'beginRequest',
+			'onBeginRequest'=>'beginRequest',
+            'onEndRequest'=>'endRequest',
 		));
 	}
 
@@ -23,7 +24,7 @@ class ApplicationConfigBehavior extends CBehavior
 	 */
 	public function beginRequest()
 	{
-		if (isset($_POST['_lang']))
+        if (isset($_POST['_lang']))
 			$this->owner->user->setState('applicationLanguage', $_POST['_lang']);
 		if ($this->owner->user->getState('applicationLanguage'))
 			$this->owner->language=$this->owner->user->getState('applicationLanguage');
@@ -40,5 +41,9 @@ class ApplicationConfigBehavior extends CBehavior
         if (file_exists ($_SERVER['DOCUMENT_ROOT'].'/protected/config/dyn.config.'.$_SERVER['HTTP_HOST'].'.inc.php'))
             require_once($_SERVER['DOCUMENT_ROOT'].'/protected/config/dyn.config.'.$_SERVER['HTTP_HOST'].'.inc.php');
 	}
+
+    public function endRequest() {
+        return true;
+    }
 }
 ?>

@@ -1,11 +1,45 @@
 <?php
 
-class HelpersDynamic {
+class HelpersDynamic extends CComponent{
 
 	public $menus = array ();
+    public $controller = null;
+    public $action = null;
+
+    /**
+     * @return null
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * @param null $action
+     */
+    public function setAction($action)
+    {
+        $this->action = $action;
+    }
+
+    /**
+     * @return null
+     */
+    public function getController()
+    {
+        return $this->controller;
+    }
+
+    /**
+     * @param null $controller
+     */
+    public function setController($controller)
+    {
+        $this->controller = $controller;
+    }
 
 	public function init(){
-		//stub
+		//parent::init();
 	}
 
 	public function addMenu($item=null){
@@ -14,9 +48,21 @@ class HelpersDynamic {
 
 	public function renderMenu(){
 		//stub
-		$contr=new Controller('default');
+        //return eval('return '.$_expression_.';');
+        //$this->menus
+        //die ('<pre>'.CVarDumper::dumpAsString($this->menus).'</pre>');
+        $componente=new CComponent;
+        foreach ($this->menus as $key=>$menu) {
+            $this->menus[$key]['itemOptions']['class']=$this->evaluateExpression($this->menus[$key]['itemOptions']['class']);
+                //eval('return '.$menu['itemOptions']['class'].';');
+        }
+
+
+        //die ('<pre>'.CVarDumper::dumpAsString($this).'</pre>');
+
+        $contr=new Controller('default');
 		$this->getArrayMenu();
-		$contr->widget ( 'zii.widgets.CMenu', array (
+        $contr->widget ( 'zii.widgets.CMenu', array (
 			// 'htmlOptions' => array( 'class' => 'nav' ),
 			'activeCssClass' => 'active',
 
