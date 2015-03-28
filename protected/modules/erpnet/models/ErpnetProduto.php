@@ -39,7 +39,7 @@ class ErpnetProduto extends CActiveRecord
             array('data_update','default',
                 'value'=>new CDbExpression('NOW()'),
                 'setOnEmpty'=>false,'on'=>'update'),
-            
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, empresa, cod_fiscal, descricao, uom, valor', 'safe', 'on'=>'search'),
