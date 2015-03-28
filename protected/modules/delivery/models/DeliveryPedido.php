@@ -185,15 +185,20 @@ class DeliveryPedido extends CActiveRecord
 		$produtos='';
 		$data= new DbAccess();
 		$arr=$data->getErpnetOrdemItem(null,$idPedido);
-
+        Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($arr).'</pre>'),'teste');
 		if (is_array($arr))	foreach ($arr as $item) {
 			//$produto=$data->getErpnetProdutos(false,$item->id_produto);
 			//Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($produto).'</pre>'),'teste');
 			$produtos=$produtos.$item->quantidade.'x'.$data->getErpnetProdutos(false,$item->id_produto)->descricao.', ';
-		}
+		} elseif(is_object($arr)){
+            $produtos=$produtos.$arr->quantidade.'x'.$data->getErpnetProdutos(false,$arr->id_produto)->descricao.', ';
+        }
 
 		return substr($produtos, 0,strlen($produtos)-2);
 	}
+    public static function getEndereco($id){
+        return '';
+    }
 
 	public function afterValidate() {
 		if ($this->hasErrors()) {

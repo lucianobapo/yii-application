@@ -58,6 +58,16 @@ $('.search-form form').submit(function(){
 			//'headerHtmlOptions'=>array('style'=>'width: 68px;'),
 			'sortable'=>false,
 		),
+
+		array(
+			'name'=>'pagamento',
+			'header'=>Helpers::t('app', 'Pagamento'),
+			'type' => 'text',
+			'value'=>'(Yii::app()->params["pagamento"][$data->pagamento])',
+			//'headerHtmlOptions'=>array('style'=>'width: 95px;'),
+			'sortable'=>false,
+		),
+        /*
 		array(
 			'name'=>'obs',
 			'header'=>Helpers::t('app', 'Troco'),
@@ -70,10 +80,11 @@ $('.search-form form').submit(function(){
 			//'name'=>'id',
 			'header'=>Helpers::t('app', 'CEP'),
 			'type' => 'html',
-			'value'=>'(($entrega=DeliveryEntrega::getEntrega($data->id))===null)?null:$entrega->cep',
+			//'value'=>'(($entrega=DeliveryEntrega::getEntrega($data->id))===null)?null:$entrega->cep',
+            'value'=>'CHtml::encode(DeliveryPedido::getEndereco($data->id))',
 			//'value'=>'',
 			'sortable'=>false,
-		),
+		),*/
 		array(
 			//'name'=>'id',
 			'header'=>Helpers::t('app', 'Produtos'),
@@ -112,6 +123,7 @@ $('.search-form form').submit(function(){
 		*/
 		array(
 			'class'=>'CButtonColumn',
+            'header'=>Helpers::t('app', 'Ações'),
 			//'viewDialogEnabled'=>false,
 			'template' => '{redo}{update}{delete}',
 			'buttons'=>array(

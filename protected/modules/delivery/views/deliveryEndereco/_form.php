@@ -23,6 +23,7 @@
 
             array(
                 'class'=>'CButtonColumn',
+                'header'=>Helpers::t('app', 'Ações'),
                 //'viewDialogEnabled'=>false,
                 'template' => '{principalName}{principal}{update}{delete}',
                 'buttons'=>array(

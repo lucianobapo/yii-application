@@ -52,10 +52,10 @@ $form=$this->beginWidget('CActiveForm', array(
 		'form'=>$form,
 		//'modelEstoque'=>$modelEstoque,
 		//'modelFatura'=>$modelFatura,
-		'modelOrdemItem'=>$modelOrdemItem,
+		//'modelOrdemItem'=>$modelOrdemItem,
 		'tabular'=>$tabular,
 		//'tipo'=>$tipo,
-		'debug'=>$debug,
+		//'debug'=>$debug,
 	));//*/ ?>
 	
 	

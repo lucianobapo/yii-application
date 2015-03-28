@@ -122,8 +122,8 @@ class DeliveryPedidoController extends Controller
 				$contr->model->pagamento='pagseguro';
 				$redirectUpdateAction='pagseguro';
 			}else{
-				$contr->model->pagamento='avistad';
-				$redirectUpdateAction='create';
+				//$contr->model->pagamento='avistad';
+				$redirectUpdateAction='confirma';
 			}
 			$contr->gravaOrdem('venda',$transaction);
 			if (isset($_POST['ErpnetOrdemItem'])) {
@@ -144,7 +144,7 @@ class DeliveryPedidoController extends Controller
 						$contr->gravaOrdemItem('venda',$transaction,$i,$valor,$nao_apagar,$sucesso);
 					}
 
-				$contr->finalizaOrdem(Helpers::t('erpnetUi', 'viewCreateFlash'),null,$redirectUpdateAction,$transaction,$valor,$sucesso,false,'deliveryEntrega');
+				$contr->finalizaOrdem(Helpers::t('erpnetUi', 'viewCreateFlash'),null,$redirectUpdateAction,$transaction,$valor,$sucesso,false,'deliveryPedido');
 			
 			}
 		}
@@ -219,7 +219,7 @@ class DeliveryPedidoController extends Controller
 						$contr->gravaOrdemItem('venda',$transaction,$i,$valor,$nao_apagar,$sucesso);
 					}
 				if ($transaction->getActive()) $contr->apagaItens($nao_apagar);
-				$contr->finalizaOrdem(Helpers::t('erpnetUi', 'viewCreateFlash'),null,'create',$transaction,$valor,$sucesso,false,'deliveryEntrega');
+				$contr->finalizaOrdem(Helpers::t('erpnetUi', 'viewCreateFlash'),null,'confirma',$transaction,$valor,$sucesso,false,'deliveryPedido');
 					
 			}
 		}
@@ -296,7 +296,7 @@ class DeliveryPedidoController extends Controller
     public function actionConfirma($id=null)
     {
         $erpnet=Yii::app()->getModule('erpnet');
-        $model=new DeliveryEntrega;
+        //$model=new DeliveryEntrega;
         $modelOrdem=ErpnetOrdem::model()->findByPk($id);
         $parceiro=DeliveryParceiro::model()->findByPk($modelOrdem->id_cliente);
         //die('<pre>'.CVarDumper::dumpAsString($modelOrdem).'</pre>');
@@ -309,13 +309,19 @@ class DeliveryPedidoController extends Controller
             return;
         }
 
-        if(isset($_POST['DeliveryEntrega']))
+        $endereco=DeliveryEndereco::model()->findByAttributes(array(
+            //'id_entidade'=>$parceiro->id,
+            'usuario'=>Yii::app()->user->social_identifier,
+            'principal'=>1,
+        ));
+
+        if(isset($_POST['ErpnetOrdem']))
         {
-            $transaction=$model->dbConnection->beginTransaction();
-            $model->attributes=$_POST['DeliveryEntrega'];
-            $modelOrdem->status_fechado=1;
-            if ( ($model->save()) && ($modelOrdem->save()) ) {
-                $transaction->commit();
+            //$transaction=$model->dbConnection->beginTransaction();
+            //$model->attributes=$_POST['DeliveryEntrega'];
+            $modelOrdem->status_fechado=$_POST['ErpnetOrdem']['status_fechado'];
+            if ( ($modelOrdem->save()) ) {
+                //$transaction->commit();
 
                 Yii::trace("Pedido $id confirmado: ".Yii::app()->name.' - '.date('d/m/Y H:i:s').".<br>\nSite: ".$_SERVER['HTTP_HOST'],'application.delivery');
 
@@ -324,11 +330,11 @@ class DeliveryPedidoController extends Controller
                 $msg=$msg.'<h3>'.Helpers::t('appUi', 'Parabéns {nome}! Seu pedido nº{pedido} foi confirmado com sucesso. Segue abaixo os detalhes:',array('{pedido}'=>$id,'{nome}'=>$parceiro->nome))."</h3><br>\n";
 
                 $msg=$msg."<br>\n<b>".Helpers::t('appUi','Endereço de entrega:')."</b><br>\n";
-                $msg=$msg.Helpers::t('appUi', "CEP: {cep}",array('{cep}'=>$parceiro->cep))."<br>\n";
+                $msg=$msg.Helpers::t('appUi', "CEP: {cep}",array('{cep}'=>$endereco->cep))."<br>\n";
 
-                $msg=$msg.Helpers::t('appUi', "Logradouro: {endereco}, {complemento}",array('{endereco}'=>$parceiro->endereco,'{complemento}'=>$parceiro->custom4),'i18n',null,false,true )."<br>\n";
-                $msg=$msg.Helpers::t('appUi', "Bairro: {bairro}",array('{bairro}'=>$parceiro->custom3),'i18n',null,false,true)."<br>\n";
-                $msg=$msg.Helpers::t('appUi', "Cidade: {cidade}/{uf}",array('{cidade}'=>$parceiro->cidade,'{uf}'=>$parceiro->estado),'i18n',null,false,true)."<br>\n";
+                $msg=$msg.Helpers::t('appUi', "Logradouro: {endereco}, {complemento}",array('{endereco}'=>$endereco->logradouro,'{complemento}'=>$endereco->complemento),'i18n',null,false,true )."<br>\n";
+                $msg=$msg.Helpers::t('appUi', "Bairro: {bairro}",array('{bairro}'=>$endereco->bairro),'i18n',null,false,true)."<br>\n";
+                $msg=$msg.Helpers::t('appUi', "Cidade: {cidade}/{uf}",array('{cidade}'=>$endereco->cidade,'{uf}'=>$endereco->estado),'i18n',null,false,true)."<br>\n";
 
                 $msg=$msg."<br>\n<b>".Helpers::t('appUi','Itens do pedido:')."</b><br>\n";
                 $itens=ErpnetOrdemItem::model()->findAllByAttributes(array('id_ordem'=>$id));
@@ -368,8 +374,9 @@ class DeliveryPedidoController extends Controller
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
 
+
             $this->render('confirma',array(
-                'model'=>$model,'id'=>$id,'parceiro'=>$parceiro,
+                'model'=>$modelOrdem,'id'=>$id,'parceiro'=>$parceiro,'endereco'=>$endereco,
             ));
         }
 
