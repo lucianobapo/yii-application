@@ -21,6 +21,10 @@
     $cs->registerScriptFile("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js",CClientScript::POS_BEGIN);
 
     $cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js",CClientScript::POS_HEAD);
+    $cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.time.min.js",CClientScript::POS_HEAD);
+    $cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.stack.min.js",CClientScript::POS_HEAD);
+
+
     //$cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.pie.min.js",CClientScript::POS_END);
     //$cs->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.categories.min.js",CClientScript::POS_END);
 

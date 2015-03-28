@@ -216,5 +216,33 @@ class DbAccess extends CDbConnection {
         } else return null;
     }
 
+    public function getDespesas($tipo=null){
+        if ($tipo==null)  return null;
+        //Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($produto).'</pre>'),'teste');
+        $key=get_class($this).'.getDespesas.'.$tipo;
+        if (($dataReader=$this->getDataCache($key))===false) {
+            $dataReader=Yii::app()->db->createCommand();
+            $dataReader->reset();
+            $dataReader->select("FROM_UNIXTIME(CONVERT(o.data_termino,UNSIGNED INTEGER),'%Y-%m-01') data, sum(valor) valor");
+            $dataReader->from('erpnet_ordem o');
+            $dataReader->where("o.empresa='ilhanet'");
+            $dataReader->andWhere("o.tipo='$tipo'");
+            $dataReader->andWhere('o.status_fechado=1');
+            $dataReader->andWhere('o.status_cancelado=0');
+            $dataReader->group('data');
+            $dataReader->order('o.data_termino');
+            //$text=$dataReader->text;
+            $dataReader=$dataReader->queryAll();
+            $this->setDataCache($key,$dataReader,'erpnet_ordem');
+        }
+        //Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($dataReader).'</pre>'),$key);
+        //echo ('<pre>'.CVarDumper::dumpAsString($dataReader).'</pre>');
+
+        //$retorno=0;
+        //if (is_array($dataReader)) $retorno=$dataReader[0]['itens'];
+        return $dataReader;
+        //return $retorno;
+    }
+
 
 }
