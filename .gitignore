@@ -3,7 +3,8 @@
 .idea
 yii
 git-add.sh
-images
-fonts
-css
+
+
 less
+css/structure.delivery.localhost.com.css
+css/visual.delivery.localhost.com.css

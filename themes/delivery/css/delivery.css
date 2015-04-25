@@ -1,0 +1,381 @@
+/* CSS Document */
+
+/** Estilos gerais da página **/
+div.container{
+	margin: 10px auto 0px;
+}
+@media (max-width: 991px) {
+	.col-md-6 {
+		width: 100%;
+	}
+}
+.row div{
+	margin: 10px 0px;
+}
+.row{
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+}
+
+
+/** Estilos gerais de formulário **/
+input.btn{
+	width: inherit!important;
+}
+
+.formulario label{
+	display: block;
+}
+.formulario input{
+	width: 100%;
+}
+.sugestao input{
+	margin: 0px 5px;
+}
+input#sugestao{
+	width: 220px;
+}
+
+
+
+/** Estilos da pagina home **/
+.textos-block {
+	display: block;
+}
+.textos-grande {
+	text-align: center;font-size:30px;
+}
+.imagem-perfil{
+	width: 80px;
+	height: 80px;
+}
+div.footer small{
+	line-height: 20px;
+}
+
+
+/** Estilos do bloco de login social **/
+.social-signin a{
+	margin: 5px!important;
+	width: 180px!important;
+}
+
+
+/** Estilos dos produtos **/
+.produto-quantidade{
+	width: 50px;
+	height: 25px;
+}
+.label-frete{
+	font-size: 12px;
+}
+.label-frete i{
+	margin: 0px 3px 0px;
+}
+.bloco-produto{
+	display: block;
+}
+ul.produtos {
+	margin: 0px;
+	padding: 0px;
+	-webkit-padding-start: 0px;
+	list-style-type: none;
+}
+.painel-pagamento{
+	width: 280px;
+}
+.painel-produtos div{
+	margin: 0px;
+}
+div.painel-produtos-header{
+	position: relative;
+	line-height: 34px;
+	font-size: 17px;
+	font-weight: 100;
+	/*background-color: #0088CC!important;
+	background-color: #0088CC!important;*/
+}
+div.painel-produtos-toolbar {
+	display: inline-block;
+	float: right;
+}
+div.painel-produtos-body {
+	padding: 5px;
+}
+.produto-imagem-padding {
+	padding: 20px 0px;
+}
+.sugestao{
+	margin: 5px 0px!important;
+}
+.sugestao input{
+	margin: 5px 5px 0px;
+}
+.sugestao-input{
+	padding: 5px;
+	line-height: 18px;
+}
+.sugestao-botao{
+	float: right;
+}
+
+
+/** Estilos dos blocos **/
+li.produtos-bloco {
+	width: 200px;
+	margin: 5px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	padding: 5px;
+}
+
+.produto-imagem-bloco {
+	position: relative;
+	text-align: center;
+	background: linear-gradient(#337AB7,white);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	height: 115px;
+}
+
+.produto-promocao{
+	margin: 3px!important;
+	background-image: url(/images/promocao.png);
+	background-attachment:scroll;
+	background-color:transparent;
+	background-position:right 3px;
+	background-repeat:no-repeat no-repeat;
+}
+
+
+
+
+/** Estilos dos span **/
+/**********************/
+.produto-imagem-span {
+	height: 115px;
+	padding: 0px!important;
+}
+div.square-background{
+	margin-bottom: 0px;
+}
+
+li.produtos-span {
+	margin: 0px;
+	vertical-align: top;
+	text-align: left;
+	padding: 5px 5px 5px 0px;
+}
+li.produtos-span div {
+	display: inline-block;
+	width: 100%;
+}
+.row-fluid [class*="span"],.row [class*="col-md-"]{
+	margin-left: 0px;
+	display: inline-block;
+	float: none;
+}
+.row-fluid [class*="span"]:first-child ul{
+	margin-left: 0px;
+}
+.row [class*="col-md-"]:first-child ul{
+	margin-left: 0px;
+}
+
+
+
+div.produto-valor-block{
+	display: block!important;
+}
+.produto-valor, .produto-valor-old{
+	margin: 0px;
+	text-align: left;
+	display: block;
+}
+.produto-valor {
+	color:#00F;
+	font-weight: bold;
+	font-size: 16px;
+}
+.produto-valor-old{
+	text-decoration: line-through;
+	font-weight: normal;
+	color:#F00;
+	font-style: normal;
+	font-size:14px;
+
+}
+h4.produto-titulo {
+	font-size:14px;
+	color: #000;
+	text-align: left;
+	margin: 0px;
+	font-weight: normal;
+	display: inline;
+}
+.produto-indisponivel {
+	color: #b94a48;
+	margin: 0px;
+}
+
+.produto-imagem:before {
+	content: " ";
+	display: inline-block;
+	height: 100px;
+	vertical-align: middle;
+}
+.produto-imagem img{
+	display: inline-block;
+	vertical-align: middle;
+}
+.produto-obs{
+	font-style: italic;
+	font-size:12px;
+	padding: 0px;
+	border-left: 0px;
+	margin: 0px;
+}
+.produto-btn {
+	margin: 0px 0px 0px 10px;
+	display: inline-block;
+	text-align: right;
+}
+
+
+.produto-promocao-bloco{
+	float: right;
+}
+
+
+@media (min-width: 768px){
+	ul.navbar-nav{
+		float: right;
+	}
+
+}
+li.item-align{
+	text-align: right;
+}
+
+
+/** Estilo do carrinho de compras **/
+.window_bottom {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+#minimizeWindow {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/** Estilo do box social **/
+.box-float {
+	width: 100px;
+	border: 0px solid #000;
+	background-color: #FFF;
+	margin: 0px 20px;
+	padding: 10px;
+	position: absolute;
+}
+
+.box-top{
+	font: 11px/1 Roboto,arial,sans-serif;
+	display: inline-block;
+}
+
+.box-top iframe{
+	position: absolute!important;
+	top: inherit!important;
+	left: inherit!important;
+}
+.box-top div{
+	height: 10px!important;
+}
+.box-top-span{
+	line-height: 20px;
+	padding: 0px 5px;
+}
+
+/* Estilo Angular */
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+
+/* Estilo outros */
+div .margem-right
+{
+	margin-right: 20px;
+}
+
+div .errorSummary
+{
+	border: 2px solid #C00;
+	padding: 7px 7px 12px 7px;
+	margin: 0 0 20px 0;
+	background: #FEE;
+	font-size: 0.9em;
+}
+
+div .errorMessage
+{
+	color: red;
+	font-size: 0.9em;
+}
+
+div .errorSummary p
+{
+	margin: 0;
+	padding: 5px;
+}
+
+div .errorSummary ul
+{
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+div.form div.error input,
+div.form div.error textarea,
+div.form div.error select,
+div.form input.error,
+div.form textarea.error,
+div.form select.error
+{
+	background: #FEE;
+	border-color: #C00;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
