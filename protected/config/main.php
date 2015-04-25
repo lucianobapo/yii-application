@@ -205,6 +205,7 @@ $config_gen = array(
 		'metaDescription'=>'Delivery Entrega em Rio das Ostras, Aberto 24 horas, Frete Grátis, Bebidas, Petiscos, Cerveja Gelada, Vodka, Energético, Sucos, Refrigerante Gelado, Gelo em escama. Faça seu pedido pelo SITE.',
 		// this is used in contact page
 		'adminEmail'=>'ilhanet.lan@gmail.com',
+		'adminEmail2'=>'luciano.bapo@gmail.com',
 		'adminEmailLink'=>'<a href="mailto:ilhanet.lan@gmail.com" target="_top">ilhanet.lan@gmail.com</a>',
 		'company'=>'IlhaNET',
 		'companyLink'=>'<a href="http://ilhanet.com" target="_blank">IlhaNET</a>',

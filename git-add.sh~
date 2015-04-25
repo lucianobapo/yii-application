@@ -1,0 +1,15 @@
+#!/bin/sh
+git add /var/www/appyii_v1/index.php
+git add /var/www/appyii_v1/git-add.sh
+git add /var/www/appyii_v1/.htaccess
+git add /var/www/appyii_v1/README.md
+git add /var/www/appyii_v1/sitemap.xml
+
+git add /var/www/appyii_v1/css/delivery.css
+git add /var/www/appyii_v1/css/structure.delivery.ilhanet.com.css
+git add /var/www/appyii_v1/css/visual.delivery.ilhanet.com.css
+
+git add /var/www/appyii_v1/fonts/*
+git add /var/www/appyii_v1/images/*
+
+git add /var/www/appyii_v1/themes/delivery/views/layouts/*

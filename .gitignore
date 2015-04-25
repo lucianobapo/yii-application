@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea
+yii
+git-add.sh
+images
+fonts
+css
+less

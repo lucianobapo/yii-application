@@ -354,6 +354,7 @@ class Helpers {
 		if (self::isOnline()) {
 			$mail=Yii::app()->Smtpmail;
 			$mail->AddBCC(Yii::app()->params['adminEmail'], Yii::app()->name);
+			$mail->AddBCC(Yii::app()->params['adminEmail2'], Yii::app()->name);
 			$mail->SetFrom(Yii::app()->params['adminEmail'],  Yii::app()->name);
 			$mail->Subject=$subject;
 			$mail->MsgHTML($msg);
