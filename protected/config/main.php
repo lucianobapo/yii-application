@@ -63,7 +63,8 @@ $config_gen = array(
 			'Mailer'=>'smtp',
 			'Port'=>getenv("SMTP_PORT"),
 			'SMTPAuth'=>true,
-			'SMTPSecure'=>'tls',
+			'SMTPSecure'=>'ssl',
+//			'SMTPSecure'=>'tls',
 		),
 		//*
 		'ePdf' => array(
