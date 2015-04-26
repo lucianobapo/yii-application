@@ -61,7 +61,7 @@ $config_gen = array(
 			'Username'=>getenv("SMTP_USER"),
 			'Password'=>getenv("SMTP_PASS"),
 			'Mailer'=>'smtp',
-			'Port'=>25,
+			'Port'=>getenv("SMTP_PASS"),
 			'SMTPAuth'=>true,
 			'SMTPSecure'=>'tls',
 		),
