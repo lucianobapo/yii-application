@@ -262,8 +262,8 @@ class ErpnetProduto extends CActiveRecord
 
 		//Controla saldo das Porçoes
 		}elseif ( ($produto==378)||($produto==379)||($produto==380) ) {
-			$saldo=3;
-		}else{
+			$saldo=$saldo+3;
+		}//else{
 			$data= new DbAccess();
 			//$data=$data->getErpnetEstoque($produto);
 			//Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($produto).'</pre>'),'teste');
@@ -273,7 +273,7 @@ class ErpnetProduto extends CActiveRecord
 				//Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($movimentoEstoque).'</pre>'),'teste');
 				$saldo=$saldo+$movimentoEstoque->quantidade;
 			}
-		}
+		//}
 
 		return $saldo;
 	}
