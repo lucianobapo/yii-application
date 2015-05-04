@@ -258,8 +258,7 @@ class ErpnetProduto extends CActiveRecord
 
 		//Zera saldo do Gelo
 		if ( ($produto==354)||($produto==355) ) {
-			if ( (date('G')>18) || (date('G')<8) ) $saldo=0;
-			else $saldo=3;
+			if ( (date('G')>8) && (date('G')<18) ) $saldo=$saldo+3;
 
 		//Controla saldo das Porçoes
 		}elseif ( ($produto==378)||($produto==379)||($produto==380) ) {
