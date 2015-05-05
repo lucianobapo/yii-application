@@ -256,14 +256,7 @@ class ErpnetProduto extends CActiveRecord
 		$saldo=0;
 		if (isset(Yii::app()->user->empresa)) $empresa=Yii::app()->user->empresa;
 
-		//Zera saldo do Gelo
-		if ( ($produto==354)||($produto==355) ) {
-			if ( (date('G')>8) && (date('G')<18) ) $saldo=$saldo+3;
-
-		//Controla saldo das Porçoes
-		}elseif ( ($produto==378)||($produto==379)||($produto==380) ) {
-			$saldo=$saldo+3;
-		}//else{
+		//else{
 			$data= new DbAccess();
 			//$data=$data->getErpnetEstoque($produto);
 			//Yii::trace('Debug: '.('<pre>'.CVarDumper::dumpAsString($produto).'</pre>'),'teste');
@@ -274,6 +267,15 @@ class ErpnetProduto extends CActiveRecord
 				$saldo=$saldo+$movimentoEstoque->quantidade;
 			}
 		//}
+
+        //Zera saldo do Gelo
+        if ( ($produto==354)||($produto==355) ) {
+            if ( (date('G')>8) && (date('G')<18) ) $saldo=$saldo+2;
+
+        //Controla saldo das Porçoes
+        }elseif ( ($produto==378)||($produto==379)||($produto==380) ) {
+            $saldo=$saldo+3;
+        }
 
 		return $saldo;
 	}
