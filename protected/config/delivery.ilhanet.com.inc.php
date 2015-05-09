@@ -174,6 +174,7 @@ $config_gen['modules']=array(
  */
 
 $config_gen['params']['zeraSaldo']=true;
+$config_gen['params']['fechado']=true;
 $config_gen['params']['metaRobots']='index, follow';
 $config_gen['params']['traducao']=true;
 $config_gen['params']['pagseguro']=false;

@@ -90,6 +90,14 @@ function test_deleteDistribution($distributionId) {
 <?php $this->renderPartial('application.modules.delivery.views.default.angularDeliveryHome', array()); ?>
 
 	<article>
+
+        <?php if(Yii::app()->params['fechado']): ?>
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <?php echo Helpers::t('appUi', 'Site fechado para manutenção. Retornaremos novamente dia 11/05/2015 às 09:00'); ?>
+            </div>
+        <?php endif; ?>
+
 		<?php if(Yii::app()->user->hasFlash('erro')): ?>
 			<div class="alert alert-danger">
 				<button type="button" class="close" data-dismiss="alert">×</button>
