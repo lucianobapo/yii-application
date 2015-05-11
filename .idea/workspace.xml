@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54301909-07e3-4533-8ea1-ab55fb2c50ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php" afterPath="$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/delivery/views/default/home.php" afterPath="$PROJECT_DIR$/protected/modules/delivery/views/default/home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="appyii_v1.iws" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="delivery.ilhanet.com.inc.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/delivery/views/default/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2815534" vertical-offset="4959" max-vertical-offset="6351">
-              <caret line="176" column="30" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.48349515" vertical-offset="2535" max-vertical-offset="4814">
+              <caret line="96" column="92" selection-start-line="96" selection-start-column="92" selection-end-line="96" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -96,8 +94,8 @@
         <option value="$PROJECT_DIR$/themes/.gitignore" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
         <option value="$PROJECT_DIR$/protected/modules/erpnet/models/ErpnetProduto.php" />
-        <option value="$PROJECT_DIR$/protected/modules/delivery/views/default/home.php" />
         <option value="$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php" />
+        <option value="$PROJECT_DIR$/protected/modules/delivery/views/default/home.php" />
       </list>
     </option>
   </component>
@@ -1016,40 +1014,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/delivery/views/default/home.php">
+    <entry file="file://$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48349515" vertical-offset="2535" max-vertical-offset="4814">
-          <caret line="96" column="124" selection-start-line="96" selection-start-column="124" selection-end-line="96" selection-end-column="124" />
+        <state vertical-scroll-proportion="0.67572814" vertical-offset="4959" max-vertical-offset="6351">
+          <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
           <folding>
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431136124783" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431136124787" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/delivery/views/default/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2815534" vertical-offset="4959" max-vertical-offset="6351">
-          <caret line="176" column="30" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.48349515" vertical-offset="2535" max-vertical-offset="4814">
+          <caret line="96" column="92" selection-start-line="96" selection-start-column="92" selection-end-line="96" selection-end-column="92" />
           <folding />
         </state>
       </provider>
