@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54301909-07e3-4533-8ea1-ab55fb2c50ab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php" afterPath="$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="appyii_v1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.38133332" vertical-offset="6065" max-vertical-offset="6873">
-              <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="23" />
+              <caret line="219" column="16" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -1310,7 +1311,7 @@
     <entry file="file://$PROJECT_DIR$/protected/config/delivery.ilhanet.com.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38133332" vertical-offset="6065" max-vertical-offset="6873">
-          <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="23" />
+          <caret line="219" column="16" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="16" />
           <folding />
         </state>
       </provider>

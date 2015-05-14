@@ -217,7 +217,7 @@ $config_gen['params']['FacebookAnalyticsCode']=<<<TAG
   if (!_fbq.loaded) {
     var fbds = document.createElement('script');
     fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    fbds.src = "connect.facebook.net/en_US/fbds.js";
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(fbds, s);
     _fbq.loaded = true;
