@@ -211,7 +211,7 @@ $config_gen['params']['GoogleAnalyticsCode']="(function(i,s,o,g,r,a,m){i['Google
 	ga('require', 'linkid', 'linkid.js');
 	ga('require', 'displayfeatures');
   	ga('send', 'pageview');";
-$config_gen['params']['FacebookAnalyticsCode']="<!-- Facebook Conversion Code for Visualizações da página principal - Delivery Rio Das Ostras 1 -->
+$config_gen['params']['FacebookAnalyticsCode']=<<<TAG
 <script>(function() {
   var _fbq = window._fbq || (window._fbq = []);
   if (!_fbq.loaded) {
@@ -227,4 +227,5 @@ window._fbq = window._fbq || [];
 window._fbq.push(['track', '6028312549771', {'value':'0.00','currency':'BRL'}]);
 </script>
 <noscript><img height=1 width=1 alt='' style='display:none'
-src='https://www.facebook.com/tr?ev=6028312549771&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1' /></noscript>";
+src='https://www.facebook.com/tr?ev=6028312549771&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1' /></noscript>
+TAG;
