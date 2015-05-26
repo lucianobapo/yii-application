@@ -94,7 +94,7 @@ function test_deleteDistribution($distributionId) {
         <?php if(Yii::app()->params['fechado']): ?>
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <?php echo Helpers::t('appUi', 'Pedidos suspensos para manutenção de estoque. Retornaremos novamente dia 11/05/2015 às 09:00'); ?>
+                <?php echo Helpers::t('appUi', 'Pedidos suspensos para manutenção de estoque. Retornaremos novamente dia 28/05/2015 às 09:00 AM'); ?>
             </div>
         <?php endif; ?>
 

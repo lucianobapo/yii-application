@@ -173,8 +173,8 @@ $config_gen['modules']=array(
  *	Configuração dos Parâmetros personalizados
  */
 
-$config_gen['params']['zeraSaldo']=false;
-$config_gen['params']['fechado']=false;
+$config_gen['params']['zeraSaldo']=true;
+$config_gen['params']['fechado']=true;
 $config_gen['params']['metaRobots']='index, follow';
 $config_gen['params']['traducao']=true;
 $config_gen['params']['pagseguro']=false;
