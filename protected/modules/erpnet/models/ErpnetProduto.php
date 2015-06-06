@@ -273,7 +273,9 @@ class ErpnetProduto extends CActiveRecord
             if ( (date('G')>8) && (date('G')<18) ) $saldo=$saldo+2;
 
         //Controla saldo das Porçoes
-        }elseif ( ($produto==378)||($produto==379)||($produto==380) ) {
+        }elseif ( ($produto==379)||($produto==380) ) {
+            $saldo=0;
+        }elseif ( ($produto==378) ) {
             $saldo=3;
         }
 
