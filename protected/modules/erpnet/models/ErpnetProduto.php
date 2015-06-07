@@ -274,7 +274,7 @@ class ErpnetProduto extends CActiveRecord
 
         //Controla saldo das Porçoes
         }elseif ( ($produto==379)||($produto==380) ) {
-            $saldo=0;
+            $saldo=3;
         }elseif ( ($produto==378) ) {
             $saldo=3;
         }
